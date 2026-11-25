@@ -1,0 +1,686 @@
+/* ==========================================================================
+   HOJA DE ESTILOS CENTRALIZADA - RESTAURANTE CHINO "LOS GACHAKYUTAS"
+   Etapa 2: Variables CSS, Flexbox, CSS Grid y Diseño Responsive (Mobile First)
+   ========================================================================== */
+
+/* 1. VARIABLES GLOBALES (:root) */
+:root {
+    /* Paleta de colores temática oriental */
+    --color-primary: #b91c1c;        /* Rojo Imperial */
+    --color-primary-dark: #7f1d1d;   /* Rojo Oscuro para hover */
+    --color-secondary: #d97706;      /* Dorado / Ámbar */
+    --color-accent: #fef3c7;         /* Crema Dorado suave */
+    
+    /* Tonos neutros */
+    --color-bg: #fafaf9;             /* Fondo general cálido */
+    --color-surface: #ffffff;        /* Fondo de tarjetas */
+    --color-dark: #1c1917;           /* Carbón oscuro (Header/Footer) */
+    --color-text: #292524;           /* Texto principal */
+    --color-text-muted: #57534e;     /* Texto secundario */
+    --color-border: #e7e5e4;         /* Bordes sutiles */
+    --color-success: #15803d;        /* Validación correcta */
+
+    /* Tipografía */
+    --font-main: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+
+    /* Espaciados y bordes */
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.1);
+    --container-max: 1200px;
+}
+
+/* 2. RESET Y PREVENCIÓN DE DESBORDAMIENTOS HORIZONTALES */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    overflow-x: hidden; /* Garantiza 0 desbordamiento horizontal en móviles */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 3. ENCABEZADO Y NAVEGACIÓN (FLEXBOX) */
+.site-header {
+    background-color: var(--color-dark);
+    color: var(--color-surface);
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column; /* Móvil primero: apilado */
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border-bottom: 4px solid var(--color-secondary);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.brand-logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-secondary);
+    letter-spacing: 0.5px;
+}
+
+.main-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.main-nav a {
+    padding: 0.5rem 0.85rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+}
+
+.nav-badge {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-cart {
+    background-color: var(--color-secondary);
+    color: var(--color-dark);
+    font-weight: 700;
+}
+
+/* 4. BOTONES REUTILIZABLES */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.65rem 1.2rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.btn-secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-dark);
+}
+
+.btn-secondary:hover {
+    filter: brightness(1.08);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.btn-outline:hover,
+.btn-outline.active-fav {
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+}
+
+.btn-block {
+    width: 100%;
+}
+
+/* 5. BANNER HERO (INDEX.HTML) */
+.hero-banner {
+    background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-primary-dark) 100%);
+    color: var(--color-surface);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 1.5rem;
+    margin-bottom: 2.5rem;
+    box-shadow: var(--shadow-md);
+}
+
+.hero-content {
+    max-width: 720px;
+}
+
+.hero-tag {
+    display: inline-block;
+    background-color: rgba(217, 119, 6, 0.25);
+    color: #fcd34d;
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.hero-banner h1 {
+    font-size: 1.9rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.hero-banner h1 span {
+    color: var(--color-secondary);
+}
+
+.hero-banner p {
+    color: #e7e5e4;
+    margin-bottom: 1.5rem;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* 6. CATÁLOGO DE PLATILLOS (CSS GRID) */
+.section-header,
+.page-banner {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-header h2,
+.page-banner h1 {
+    font-size: 1.75rem;
+    color: var(--color-primary-dark);
+    margin-bottom: 0.4rem;
+}
+
+.section-header p,
+.page-banner p {
+    color: var(--color-text-muted);
+}
+
+/* Grid Responsivo Base (Móvil: 1 columna) */
+.catalog-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+/* Tarjeta Individual de Platillo */
+.dish-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.dish-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.dish-media {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.dish-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.price-tag {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: var(--color-dark);
+    color: #fcd34d;
+    font-weight: 700;
+    padding: 0.35rem 0.75rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+}
+
+.dish-body {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 0.75rem;
+}
+
+.category-badge {
+    align-self: flex-start;
+    background-color: var(--color-accent);
+    color: var(--color-primary-dark);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 50px;
+    text-transform: uppercase;
+}
+
+.dish-body h2,
+.dish-body h3 {
+    font-size: 1.2rem;
+    color: var(--color-dark);
+}
+
+.dish-desc {
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+}
+
+/* Acordeón nativo de Ingredientes */
+.ingredients-box {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 0.6rem 0.8rem;
+    font-size: 0.88rem;
+}
+
+.ingredients-box summary {
+    font-weight: 600;
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+.ingredients-box p {
+    margin-top: 0.5rem;
+    color: var(--color-text);
+}
+
+.dish-actions {
+    margin-top: auto;
+    padding-top: 0.75rem;
+    display: flex;
+    gap: 0.6rem;
+}
+
+.dish-actions .btn {
+    flex: 1;
+    padding: 0.55rem 0.75rem;
+    font-size: 0.9rem;
+}
+
+/* 7. FILTROS Y PANELES DE FAVORITOS / CARRITO (PRODUCTOS.HTML) */
+.category-filter ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-top: 1.25rem;
+}
+
+.filter-pill {
+    padding: 0.45rem 1rem;
+    border-radius: 50px;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-surface);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.filter-pill.active,
+.filter-pill:hover {
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    border-color: var(--color-primary);
+}
+
+.user-panels {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.panel-box {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.panel-box h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.summary-list {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.summary-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed var(--color-border);
+    font-size: 0.95rem;
+}
+
+.btn-small {
+    background-color: #fee2e2;
+    color: var(--color-primary);
+    border: none;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.cart-total {
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+    text-align: right;
+}
+
+/* 8. BARRA INFORMATIVA (INDEX.HTML) */
+.info-banner {
+    background-color: var(--color-accent);
+    border: 1px solid #fde68a;
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+}
+
+.info-banner h3 {
+    color: var(--color-primary-dark);
+    margin-bottom: 0.35rem;
+    font-size: 1.1rem;
+}
+
+/* 9. FORMULARIO DE OPINIONES Y VALIDACIÓN NATIVA (CONTACTO.HTML) */
+.feedback-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.feedback-form {
+    background-color: var(--color-surface);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+}
+
+.feedback-form fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.feedback-form legend {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin-bottom: 0.75rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+}
+
+/* Indicadores visuales de validación nativa HTML5 */
+.form-group input:user-valid,
+.form-group select:user-valid,
+.form-group textarea:user-valid {
+    border-color: var(--color-success);
+}
+
+.form-group input:user-invalid,
+.form-group select:user-invalid,
+.form-group textarea:user-invalid {
+    border-color: var(--color-primary);
+}
+
+.form-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+}
+
+.form-check input[type="checkbox"] {
+    margin-top: 0.25rem;
+    width: 18px;
+    height: 18px;
+}
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* Reseñas laterales */
+.recent-reviews {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.recent-reviews h2 {
+    font-size: 1.3rem;
+    color: var(--color-dark);
+}
+
+.review-item {
+    background-color: var(--color-surface);
+    border-left: 4px solid var(--color-secondary);
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+}
+
+.review-item header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
+}
+
+.review-dish {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 0.4rem;
+}
+
+/* 10. PIE DE PÁGINA (FLEXBOX) */
+.site-footer {
+    background-color: var(--color-dark);
+    color: #d6d3d1;
+    padding: 2rem 1.5rem;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-top: 4px solid var(--color-primary);
+}
+
+.site-footer h3,
+.site-footer h4 {
+    color: var(--color-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.footer-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.footer-nav a:hover {
+    color: var(--color-secondary);
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   11. MEDIA QUERIES (MÓVIL < 768px | TABLET >= 768px | LAPTOP >= 1024px)
+   ========================================================================== */
+
+/* MÓVIL (< 768px): Ajustes finos de botones y textos en pantallas pequeñas */
+@media (max-width: 767px) {
+    .hero-banner {
+        padding: 1.75rem 1.25rem;
+        text-align: center;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .hero-actions .btn,
+    .form-actions .btn {
+        width: 100%;
+    }
+}
+
+/* TABLET (768px a 1023px): 2 columnas en catálogo y paneles */
+@media (min-width: 768px) {
+    .site-header {
+        flex-direction: row;
+        padding: 1rem 2rem;
+    }
+
+    .hero-banner {
+        padding: 3.5rem 3rem;
+    }
+
+    .hero-banner h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Grid de 2 columnas para Tablet */
+    .catalog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .user-panels {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .info-banner {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .site-footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 2.5rem 3rem;
+    }
+}
+
+/* LAPTOP Y ESCRITORIO (>= 1024px): 3 columnas en catálogo y vista dividida en contacto */
+@media (min-width: 1024px) {
+    main {
+        padding: 2.5rem 2rem;
+    }
+
+    /* Grid de 3 columnas para Laptop/PC */
+    .catalog-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Formulario a la izquierda (1.4fr) y reseñas a la derecha (1fr) */
+    .feedback-container {
+        grid-template-columns: 1.4fr 1fr;
+        align-items: start;
+    }
+}
