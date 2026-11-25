@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo completo de platillos, precios e ingredientes del restaurante chino Los Gachakyutas.">
+    <title>Menú y Platillos | Los Gachakyutas</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- ENCABEZADO PRINCIPAL -->
+    <header class="site-header">
+        <a href="index.html" class="brand-logo" aria-label="Inicio Los Gachakyutas">
+            🐉 Los Gachakyutas
+        </a>
+
+        <nav class="main-nav" aria-label="Navegación Principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html" class="active">Menú y Platillos</a></li>
+                <li><a href="contacto.html">Opiniones y Sugerencias</a></li>
+                <li><a href="#favoritos" class="nav-badge">❤️ Favoritos (2)</a></li>
+                <li><a href="#carrito" class="nav-badge btn-cart">🛒 Carrito (2)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="catalog-layout">
+        <!-- Encabezado de página y filtros -->
+        <header class="page-banner">
+            <h1>Menú de Platillos Disponibles</h1>
+            <p>Consulta fotografías, precios e ingredientes detallados. Guarda tus favoritos o agrégalos a tu carrito.</p>
+
+            <!-- Filtro semántico de categorías -->
+            <nav class="category-filter" aria-label="Filtrar platillos por categoría">
+                <ul>
+                    <li><a href="#todos" class="filter-pill active">Todos (6)</a></li>
+                    <li><a href="#entradas" class="filter-pill">Entradas</a></li>
+                    <li><a href="#arroz-fideos" class="filter-pill">Arroz y Fideos</a></li>
+                    <li><a href="#platos-fuertes" class="filter-pill">Platos Fuertes</a></li>
+                    <li><a href="#bebidas" class="filter-pill">Bebidas</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- SECCIÓN PRINCIPAL DEL CATÁLOGO (CSS Grid) -->
+        <section id="todos" class="catalog-section" aria-label="Lista de platillos">
+            <section class="catalog-grid">
+
+                <!-- Platillo 1 -->
+                <article id="entradas" class="dish-card">
+                    <figure class="dish-media">
+                        <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80" alt="Rollos Primavera crujientes acompañados de salsa agridulce" loading="lazy">
+                        <figcaption class="price-tag">$75.00 MXN</figcaption>
+                    </figure>
+                    <section class="dish-body">
+                        <span class="category-badge">Entradas</span>
+                        <h2>Rollos Primavera (4 piezas)</h2>
+                        <p class="dish-desc">Crujientes rollos rellenos de vegetales salteados, servidos con salsa agridulce artesanal.</p>
+                        <details class="ingredients-box">
+                            <summary>Conocer ingredientes</summary>
+                            <p>Pasta filo de trigo, col blanca, zanahoria rallada, germen de soya, calabacín, salsa de soya y aceite vegetal.</p>
+                        </details>
+                        <footer class="dish-actions">
+                            <button type="button" class="btn btn-outline" aria-label="Agregar Rollos Primavera a favoritos">❤️ Favorito</button>
+                            <button type="button" class="btn btn-primary" aria-label="Añadir Rollos Primavera al carrito">🛒 Añadir</button>
+                        </footer>
+                    </section>
+                </article>
+
+                <!-- Platillo 2 -->
+                <article id="arroz-fideos" class="dish-card">
+                    <figure class="dish-media">
+                        <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=600&q=80" alt="Arroz Frito Tres Delicias en tazón" loading="lazy">
+                        <figcaption class="price-tag">$115.00 MXN</figcaption>
+                    </figure>
+                    <section class="dish-body">
+                        <span class="category-badge">Arroz y Fideos</span>
+                        <h2>Arroz Frito Tres Delicias</h2>
+                        <p class="dish-desc">Arroz jazmín salteado al wok con camarón, pollo, res, huevo y cebollín fresco.</p>
+                        <details class="ingredients-box">
+                            <summary>Conocer ingredientes</summary>
+                            <p>Arroz jazmín al vapor, camarón pacotilla, pechuga de pollo, arrachera en cubos, huevo, chícharos, zanahoria y salsa de soya.</p>
+                        </details>
+                        <footer class="dish-actions">
+                            <button type="button" class="btn btn-outline active-fav" aria-label="Quitar de favoritos">💖 En Favoritos</button>
+                            <button type="button" class="btn btn-primary" aria-label="Añadir Arroz Frito al carrito">🛒 Añadir</button>
+                        </footer>
+                    </section>
+                </article>
+
+                <!-- Platillo 3 -->
+                <article id="platos-fuertes" class="dish-card">
+                    <figure class="dish-media">
+                        <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=600&q=80" alt="Pollo a la Naranja glaseado" loading="lazy">
+                        <figcaption class="price-tag">$145.00 MXN</figcaption>
+                    </figure>
+                    <section class="dish-body">
+                        <span class="category-badge">Platos Fuertes</span>
+                        <h2>Pollo a la Naranja Imperial</h2>
+                        <p class="dish-desc">Trozos de pechuga crujiente glaseados en salsa cítrica de naranja y ajonjolí tostado.</p>
+                        <details class="ingredients-box">
+                            <summary>Conocer ingredientes</summary>
+                            <p>Pechuga de pollo, fécula de maíz, jugo de naranja natural, miel, jengibre, ajo, vinagre de arroz y ajonjolí.</p>
+                        </details>
+                        <footer class="dish-actions">
+                            <button type="button" class="btn btn-outline active-fav" aria-label="Quitar de favoritos">💖 En Favoritos</button>
+                            <button type="button" class="btn btn-primary" aria-label="Añadir Pollo a la Naranja al carrito">🛒 Añadir</button>
+                        </footer>
+                    </section>
+                </article>
+
+                <!-- Platillo 4 -->
+                <article class="dish-card">
+                    <figure class="dish-media">
+                        <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=600&q=80" alt="Chow Mein Especial con fideos y verduras" loading="lazy">
+                        <figcaption class="price-tag">$135.00 MXN</figcaption>
+                    </figure>
+                    <section class="dish-body">
+                        <span class="category-badge">Arroz y Fideos</span>
+                        <h2>Chow Mein Especial Gachakyuta</h2>
+                        <p class="dish-desc">Fideos orientales salteados con vegetales de temporada y salsa especial de la casa.</p>
+                        <details class="ingredients-box">
+                            <summary>Conocer ingredientes</summary>
+                            <p>Fideos de trigo, brócoli, pimiento morrón, apio, cebolla morada, salsa de ostión, salsa de soya y aceite de sésamo.</p>
+                        </details>
+                        <footer class="dish-actions">
+                            <button type="button" class="btn btn-outline" aria-label="Agregar Chow Mein a favoritos">❤️ Favorito</button>
+                            <button type="button" class="btn btn-primary" aria-label="Añadir Chow Mein al carrito">🛒 Añadir</button>
+                        </footer>
+                    </section>
+                </article>
+
+                <!-- Platillo 5 -->
+                <article class="dish-card">
+                    <figure class="dish-media">
+                        <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=600&q=80" alt="Dumplings al vapor en canasta de bambú" loading="lazy">
+                        <figcaption class="price-tag">$95.00 MXN</figcaption>
+                    </figure>
+                    <section class="dish-body">
+                        <span class="category-badge">Entradas</span>
+                        <h2>Dumplings al Vapor (6 piezas)</h2>
+                        <p class="dish-desc">Cocidos en vaporera de bambú, rellenos de carne de cerdo especiada y cebollín.</p>
+                        <details class="ingredients-box">
+                            <summary>Conocer ingredientes</summary>
+                            <p>Harina de trigo, carne molida de cerdo, col china, cebollín, jengibre fresco, ajo y salsa ponzu.</p>
+                        </details>
+                        <footer class="dish-actions">
+                            <button type="button" class="btn btn-outline" aria-label="Agregar Dumplings a favoritos">❤️ Favorito</button>
+                            <button type="button" class="btn btn-primary" aria-label="Añadir Dumplings al carrito">🛒 Añadir</button>
+                        </footer>
+                    </section>
+                </article>
+
+                <!-- Platillo 6 -->
+                <article id="bebidas" class="dish-card">
+                    <figure class="dish-media">
+                        <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=600&q=80" alt="Té helado de Jazmín con limón" loading="lazy">
+                        <figcaption class="price-tag">$45.00 MXN</figcaption>
+                    </figure>
+                    <section class="dish-body">
+                        <span class="category-badge">Bebidas</span>
+                        <h2>Té Helado de Jazmín y Lichi</h2>
+                        <p class="dish-desc">Infusión fría de flores de jazmín endulzada naturalmente con extracto de lichi.</p>
+                        <details class="ingredients-box">
+                            <summary>Conocer ingredientes</summary>
+                            <p>Agua purificada, hojas de té verde aromatizadas con flor de jazmín, pulpa natural de lichi y hielo.</p>
+                        </details>
+                        <footer class="dish-actions">
+                            <button type="button" class="btn btn-outline" aria-label="Agregar Té de Jazmín a favoritos">❤️ Favorito</button>
+                            <button type="button" class="btn btn-primary" aria-label="Añadir Té de Jazmín al carrito">🛒 Añadir</button>
+                        </footer>
+                    </section>
+                </article>
+
+            </section>
+        </section>
+
+        <!-- SECCIÓN DE INTERACCIÓN: LISTA DE FAVORITOS Y CARRITO DE COMPRAS -->
+        <section class="user-panels" aria-label="Resumen de Favoritos y Carrito">
+            
+            <!-- Panel Lista de Favoritos -->
+            <aside id="favoritos" class="panel-box" aria-labelledby="fav-title">
+                <header>
+                    <h2 id="fav-title">❤️ Mis Platillos Favoritos</h2>
+                    <p>Guarda tus alimentos preferidos para pedirlos rápidamente.</p>
+                </header>
+                <ul class="summary-list">
+                    <li>
+                        <span>Arroz Frito Tres Delicias ($115.00)</span>
+                        <button type="button" class="btn-small" aria-label="Eliminar de favoritos">Quitar</button>
+                    </li>
+                    <li>
+                        <span>Pollo a la Naranja Imperial ($145.00)</span>
+                        <button type="button" class="btn-small" aria-label="Eliminar de favoritos">Quitar</button>
+                    </li>
+                </ul>
+            </aside>
+
+            <!-- Panel Carrito de Compras -->
+            <aside id="carrito" class="panel-box" aria-labelledby="cart-title">
+                <header>
+                    <h2 id="cart-title">🛒 Carrito de Compras</h2>
+                    <p>Resumen de productos seleccionados para tu orden.</p>
+                </header>
+                <ul class="summary-list">
+                    <li>
+                        <span>1x Arroz Frito Tres Delicias</span>
+                        <strong>$115.00 MXN</strong>
+                    </li>
+                    <li>
+                        <span>1x Pollo a la Naranja Imperial</span>
+                        <strong>$145.00 MXN</strong>
+                    </li>
+                </ul>
+                <footer class="cart-footer">
+                    <p class="cart-total">Total Estimado: <strong>$260.00 MXN</strong></p>
+                    <button type="button" class="btn btn-primary btn-block">Confirmar Pedido</button>
+                </footer>
+            </aside>
+
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="site-footer">
+        <section class="footer-info">
+            <h3>🐉 Los Gachakyutas</h3>
+            <p>Sabores tradicionales de China preparados al momento.</p>
+            <p><strong>Horario:</strong> Martes a Domingo de 12:00 PM a 10:00 PM</p>
+        </section>
+
+        <nav class="footer-nav" aria-label="Enlaces del pie de página">
+            <h4>Navegación</h4>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Menú y Catálogo</a></li>
+                <li><a href="contacto.html">Sugerencias y Opiniones</a></li>
+            </ul>
+        </nav>
+
+        <section class="footer-meta">
+            <p>&copy; 2026 Restaurante Chino Los Gachakyutas.</p>
+            <p>Proyecto Académico Integrador — 5° Semestre Programación.</p>
+        </section>
+    </footer>
+
+</body>
+</html>

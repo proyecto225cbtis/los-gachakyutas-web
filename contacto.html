@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Envía tus sugerencias, comentarios y opiniones sobre los platillos del restaurante chino Los Gachakyutas.">
+    <title>Sugerencias y Opiniones | Los Gachakyutas</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- ENCABEZADO PRINCIPAL -->
+    <header class="site-header">
+        <a href="index.html" class="brand-logo" aria-label="Inicio Los Gachakyutas">
+            🐉 Los Gachakyutas
+        </a>
+
+        <nav class="main-nav" aria-label="Navegación Principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Menú y Platillos</a></li>
+                <li><a href="contacto.html" class="active">Opiniones y Sugerencias</a></li>
+                <li><a href="productos.html#favoritos" class="nav-badge">❤️ Favoritos (2)</a></li>
+                <li><a href="productos.html#carrito" class="nav-badge btn-cart">🛒 Carrito (2)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contact-layout">
+        <header class="page-banner">
+            <h1>Buzón de Sugerencias y Opiniones</h1>
+            <p>Cuéntanos qué te parecieron nuestros alimentos o qué nuevos platillos te gustaría ver en el menú de <strong>Los Gachakyutas</strong>.</p>
+        </header>
+
+        <section class="feedback-container">
+            <!-- FORMULARIO CON VALIDACIÓN NATIVA HTML5 -->
+            <form action="#" method="POST" class="feedback-form" aria-labelledby="form-heading">
+                <fieldset>
+                    <legend id="form-heading">Comparte tu experiencia gastronómica</legend>
+
+                    <!-- Input de Texto (Nombre) -->
+                    <p class="form-group">
+                        <label for="nombre">Nombre completo *</label>
+                        <input 
+                            type="text" 
+                            id="nombre" 
+                            name="nombre" 
+                            placeholder="Ej. Carlos Mendoza" 
+                            required 
+                            minlength="3" 
+                            maxlength="60"
+                            pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+"
+                            title="Ingresa solo letras y espacios (mínimo 3 caracteres).">
+                    </p>
+
+                    <!-- Input de Correo Electrónico -->
+                    <p class="form-group">
+                        <label for="correo">Correo electrónico *</label>
+                        <input 
+                            type="email" 
+                            id="correo" 
+                            name="correo" 
+                            placeholder="ejemplo@correo.com" 
+                            required>
+                    </p>
+
+                    <!-- Select de Platillo Evaluado -->
+                    <p class="form-group">
+                        <label for="platillo">Platillo sobre el que deseas opinar *</label>
+                        <select id="platillo" name="platillo" required>
+                            <option value="" disabled selected>-- Selecciona un platillo o tema --</option>
+                            <option value="chow-mein">Chow Mein Especial Gachakyuta</option>
+                            <option value="pollo-naranja">Pollo a la Naranja Imperial</option>
+                            <option value="arroz-frito">Arroz Frito Tres Delicias</option>
+                            <option value="rollos-primavera">Rollos Primavera</option>
+                            <option value="dumplings">Dumplings al Vapor</option>
+                            <option value="te-jazmin">Té Helado de Jazmín y Lichi</option>
+                            <option value="sugerencia-general">Sugerencia General / Nuevo Platillo</option>
+                        </select>
+                    </p>
+
+                    <!-- Select de Calificación -->
+                    <p class="form-group">
+                        <label for="calificacion">Calificación del alimento *</label>
+                        <select id="calificacion" name="calificacion" required>
+                            <option value="5">⭐⭐⭐⭐⭐ Excelente (5/5)</option>
+                            <option value="4">⭐⭐⭐⭐ Muy bueno (4/5)</option>
+                            <option value="3">⭐⭐⭐ Bueno (3/5)</option>
+                            <option value="2">⭐⭐ Regular (2/5)</option>
+                            <option value="1">⭐ Necesita mejorar (1/5)</option>
+                        </select>
+                    </p>
+
+                    <!-- Textarea para Opinión / Sugerencia -->
+                    <p class="form-group">
+                        <label for="mensaje">Tu opinión o sugerencia sobre los alimentos *</label>
+                        <textarea 
+                            id="mensaje" 
+                            name="mensaje" 
+                            rows="5" 
+                            placeholder="Escribe aquí tu reseña sobre el sabor, porciones, ingredientes o sugerencias..." 
+                            required 
+                            minlength="15" 
+                            maxlength="500"></textarea>
+                    </p>
+
+                    <!-- Checkbox de confirmación -->
+                    <p class="form-check">
+                        <input type="checkbox" id="autorizacion" name="autorizacion" required>
+                        <label for="autorizacion">Autorizo publicar mi opinión de forma anónima en la sección de reseñas del menú.</label>
+                    </p>
+
+                    <footer class="form-actions">
+                        <button type="reset" class="btn btn-secondary">Limpiar Formulario</button>
+                        <button type="submit" class="btn btn-primary">Enviar Opinión</button>
+                    </footer>
+                </fieldset>
+            </form>
+
+            <!-- PANEL LATERAL CON RESEÑAS RECIENTES -->
+            <aside class="recent-reviews" aria-labelledby="reviews-title">
+                <h2 id="reviews-title">Opiniones Recientes de Clientes</h2>
+                
+                <article class="review-item">
+                    <header>
+                        <strong>Ana Sofía R.</strong>
+                        <span>⭐⭐⭐⭐⭐</span>
+                    </header>
+                    <p class="review-dish">Sobre: Pollo a la Naranja Imperial</p>
+                    <p>"Muy crujiente y la salsa tiene el equilibrio exacto entre dulce y cítrico. Excelente porción."</p>
+                </article>
+
+                <article class="review-item">
+                    <header>
+                        <strong>Luis Fernando G.</strong>
+                        <span>⭐⭐⭐⭐⭐</span>
+                    </header>
+                    <p class="review-dish">Sobre: Chow Mein Especial Gachakyuta</p>
+                    <p>"Me encantó poder revisar los ingredientes antes de pedir porque soy alérgico al cacahuate. Todo delicioso."</p>
+                </article>
+
+                <article class="review-item">
+                    <header>
+                        <strong>Mariana Torres</strong>
+                        <span>⭐⭐⭐⭐</span>
+                    </header>
+                    <p class="review-dish">Sobre: Dumplings al Vapor</p>
+                    <p>"Llegan súper calientes y la salsa ponzu les da un gran sabor. Sugiero agregar versión vegetariana."</p>
+                </article>
+            </aside>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="site-footer">
+        <section class="footer-info">
+            <h3>🐉 Los Gachakyutas</h3>
+            <p>Sabores tradicionales de China preparados al momento.</p>
+            <p><strong>Horario:</strong> Martes a Domingo de 12:00 PM a 10:00 PM</p>
+        </section>
+
+        <nav class="footer-nav" aria-label="Enlaces del pie de página">
+            <h4>Navegación</h4>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Menú y Catálogo</a></li>
+                <li><a href="contacto.html">Sugerencias y Opiniones</a></li>
+            </ul>
+        </nav>
+
+        <section class="footer-meta">
+            <p>&copy; 2026 Restaurante Chino Los Gachakyutas.</p>
+            <p>Proyecto Académico Integrador — 5° Semestre Programación.</p>
+        </section>
+    </footer>
+
+</body>
+</html>

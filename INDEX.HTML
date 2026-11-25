@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Restaurante de comida china tradicional y moderna Los Gachakyutas. Consulta nuestro menú, ingredientes y realiza tu pedido.">
+    <title>Los Gachakyutas | Auténtica Comida China</title>
+    <!-- Enlace a la hoja de estilos centralizada -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- ENCABEZADO PRINCIPAL Y NAVEGACIÓN (Flexbox) -->
+    <header class="site-header">
+        <a href="index.html" class="brand-logo" aria-label="Inicio Los Gachakyutas">
+            🐉 Los Gachakyutas
+        </a>
+
+        <nav class="main-nav" aria-label="Navegación Principal">
+            <ul>
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="productos.html">Menú y Platillos</a></li>
+                <li><a href="contacto.html">Opiniones y Sugerencias</a></li>
+                <li><a href="productos.html#favoritos" class="nav-badge"> Favoritos (0)</a></li>
+                <li><a href="productos.html#carrito" class="nav-badge btn-cart">🛒 Carrito (0)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+        <!-- SECCIÓN BANNER HERO -->
+        <section class="hero-banner" aria-labelledby="hero-title">
+            <article class="hero-content">
+                <p class="hero-tag">Tradición Oriental • Wok al Momento</p>
+                <h1 id="hero-title">El auténtico sabor oriental en <span>Los Gachakyutas</span></h1>
+                <p>Explora nuestros platillos preparados con ingredientes frescos, guarda tus favoritos, revisa cada detalle y arma tu pedido desde tu teléfono, tableta o computadora.</p>
+                <nav class="hero-actions" aria-label="Acciones rápidas">
+                    <a href="productos.html" class="btn btn-primary">Ver Menú Completo</a>
+                    <a href="contacto.html" class="btn btn-secondary">Enviar Sugerencia</a>
+                </nav>
+            </article>
+        </section>
+
+        <!-- SECCIÓN DE PLATILLOS DESTACADOS (CSS Grid) -->
+        <section class="featured-section" aria-labelledby="featured-heading">
+            <header class="section-header">
+                <h2 id="featured-heading">Especialidades de la Casa</h2>
+                <p>Los platillos favoritos de nuestros comensales esta semana</p>
+            </header>
+
+            <section class="catalog-grid">
+                <!-- Tarjeta Semántica 1 -->
+                <article class="dish-card">
+                    <figure class="dish-media">
+                        <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=600&q=80" alt="Plato de Chow Mein Especial con verduras y pollo" loading="lazy">
+                        <figcaption class="price-tag">$135.00 MXN</figcaption>
+                    </figure>
+                    <section class="dish-body">
+                        <h3>Chow Mein Especial Gachakyuta</h3>
+                        <p class="dish-desc">Fideos de trigo salteados al wok a fuego alto con vegetales crujientes y salsa de ostión artesanal.</p>
+                        <details class="ingredients-box">
+                            <summary>Ver ingredientes</summary>
+                            <p>Fideos de huevo, pechuga de pollo, camarón, brócoli, zanahoria, germinado de soya, salsa de soya y aceite de ajonjolí.</p>
+                        </details>
+                        <footer class="dish-actions">
+                            <a href="productos.html" class="btn btn-outline">❤️ Favorito</a>
+                            <a href="productos.html" class="btn btn-primary">🛒 Ordenar</a>
+                        </footer>
+                    </section>
+                </article>
+
+                <!-- Tarjeta Semántica 2 -->
+                <article class="dish-card">
+                    <figure class="dish-media">
+                        <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=600&q=80" alt="Pollo a la Naranja glaseado con ajonjolí" loading="lazy">
+                        <figcaption class="price-tag">$145.00 MXN</figcaption>
+                    </figure>
+                    <section class="dish-body">
+                        <h3>Pollo a la Naranja Imperial</h3>
+                        <p class="dish-desc">Trozos crujientes de pechuga bañados en reducción natural de naranja dulce con un toque picante.</p>
+                        <details class="ingredients-box">
+                            <summary>Ver ingredientes</summary>
+                            <p>Pechuga de pollo empanizada, jugo natural de naranja, ralladura cítrica, jengibre fresco, ajo, chile de árbol y semillas de sésamo.</p>
+                        </details>
+                        <footer class="dish-actions">
+                            <a href="productos.html" class="btn btn-outline">❤️ Favorito</a>
+                            <a href="productos.html" class="btn btn-primary">🛒 Ordenar</a>
+                        </footer>
+                    </section>
+                </article>
+
+                <!-- Tarjeta Semántica 3 -->
+                <article class="dish-card">
+                    <figure class="dish-media">
+                        <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=600&q=80" alt="Orden de Dumplings al vapor" loading="lazy">
+                        <figcaption class="price-tag">$95.00 MXN</figcaption>
+                    </figure>
+                    <section class="dish-body">
+                        <h3>Dumplings al Vapor (6 pzas)</h3>
+                        <p class="dish-desc">Empanadillas tradicionales rellenas de cerdo especiado, servidas con salsa ponzu de la casa.</p>
+                        <details class="ingredients-box">
+                            <summary>Ver ingredientes</summary>
+                            <p>Masa de harina de trigo, carne molida de cerdo, col china, cebollín, jengibre rallado, ajo y vinagre de arroz.</p>
+                        </details>
+                        <footer class="dish-actions">
+                            <a href="productos.html" class="btn btn-outline">❤️ Favorito</a>
+                            <a href="productos.html" class="btn btn-primary">🛒 Ordenar</a>
+                        </footer>
+                    </section>
+                </article>
+            </section>
+        </section>
+
+        <!-- BARRA INFORMATIVA / EXPERIENCIA MULTIPLATAFORMA -->
+        <aside class="info-banner" aria-label="Ventajas del servicio">
+            <article>
+                <h3>📱 Acceso Multiplataforma</h3>
+                <p>Consulta nuestro menú digital desde tu smartphone, tableta o computadora sin instalar aplicaciones.</p>
+            </article>
+            <article>
+                <h3>🥗 Transparencia de Ingredientes</h3>
+                <p>Conoce exactamente qué contiene cada platillo antes de agregarlo a tu carrito de compras.</p>
+            </article>
+            <article>
+                <h3>💬 Tu Opinión Importa</h3>
+                <p>Califica nuestros alimentos y envíanos tus sugerencias para mejorar cada receta.</p>
+            </article>
+        </aside>
+    </main>
+
+    <!-- PIE DE PÁGINA (Flexbox) -->
+    <footer class="site-footer">
+        <section class="footer-info">
+            <h3>🐉 Los Gachakyutas</h3>
+            <p>Sabores tradicionales de China preparados al momento.</p>
+            <p><strong>Horario:</strong> Martes a Domingo de 12:00 PM a 10:00 PM</p>
+        </section>
+
+        <nav class="footer-nav" aria-label="Enlaces del pie de página">
+            <h4>Navegación</h4>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Menú y Catálogo</a></li>
+                <li><a href="contacto.html">Sugerencias y Opiniones</a></li>
+            </ul>
+        </nav>
+
+        <section class="footer-meta">
+            <p>&copy; 2026 Restaurante Chino Los Gachakyutas.</p>
+            <p>Proyecto Académico  — 5° Semestre Programación.</p>
+            <p>Por David Arredondo Ramirez</p>
+            <p>Guillermo Rafael Arriola Gonzales</p>
+        </section>
+    </footer>
+
+</body>
+</html>
